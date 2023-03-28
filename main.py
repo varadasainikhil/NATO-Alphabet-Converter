@@ -2,13 +2,9 @@ import pandas as pd
 
 # Reading the dataset
 data = pd.read_csv("nato_phonetic_alphabet.csv")
-data_dict = {}
 
-# To convert the dataframe into a dictionary
-for index, row in data.iterrows():
-    key = row.letter
-    value = row.code
-    data_dict[key] = value
+# Converting dataframe into a dictionary
+data_dict = {row.letter: row.code for index, row in data.iterrows()}
 print(data_dict)
 
 # User input
